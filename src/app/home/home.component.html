@@ -1,0 +1,17 @@
+<main>
+  <ng-container>
+    <app-carousel [slides]="slides"></app-carousel>
+  </ng-container>
+
+  <hr>
+
+  <ng-container>
+    <!-- <app-card-wrapper title="Inputed Title" subtitle="Inputed subtitle"
+      content="Inputed card content this shoulb contain some context!"
+      img="https://material.angular.io/assets/img/examples/shiba2.jpg" [actions]="actions" (emitActionEvent)="catchEmit()"
+      footer="And this is the footer!" /> -->
+    <app-card-wrapper cardTitle="Explore different locations!" subtitle="Read the following guide for the best advice."
+      footer="Actual data." [actions]="actions"
+      img="https://images.pexels.com/photos/7426234/pexels-photo-7426234.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" />
+  </ng-container>
+</main>

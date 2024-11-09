@@ -1,0 +1,25 @@
+<mat-card appearance="raised">
+  <mat-card-header>
+    @if(cardTitle){<mat-card-title>{{cardTitle}}</mat-card-title>}
+    @if(subtitle){<mat-card-subtitle>{{subtitle}}</mat-card-subtitle>}
+  </mat-card-header>
+  @if(content){<mat-card-content>{{content}}</mat-card-content>}
+  @if(img){<img mat-card-image [src]="img" [alt]="img">}
+  @if(actions){
+  <mat-card-actions>
+    @for(action of actions;track action){
+    @if(action.href){<a mat-button [href]="action.href">@if(action.icon){<mat-icon
+        aria-hidden="true">{{action.icon}}</mat-icon>}{{action.title}}</a>}
+    @else {<button mat-raised-button (click)="emitAction()">@if(action.icon){<mat-icon
+        aria-hidden="true">{{action.icon}}</mat-icon>}{{action.title}}</button>}
+    }
+  </mat-card-actions>
+  }
+  @if(footer){
+  <mat-card-footer>
+    <a mat-button>
+      <mat-icon aria-hidden="true">contact_support</mat-icon>
+      {{footer}}
+    </a>
+  </mat-card-footer>}
+</mat-card>

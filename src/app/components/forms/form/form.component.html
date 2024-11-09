@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="form">
+    <form [formGroup]="myForm" style="width: 100%;">
+      <mat-form-field>
+        <mat-label>Username</mat-label>
+        <input matInput placeholder="Example: Ioulios Poros" formControlName="username" required />
+        @if (myForm.invalid && myForm.touched) {
+        @if(myForm.controls['username'].errors?.['maxlength']){
+        <mat-error>Max characters reached:
+          {{myForm.controls['username'].errors?.['maxlength']?.['actualLength']}}/10</mat-error>
+        }@else {
+        <mat-error>Username required!</mat-error>
+        }
+        }
+      </mat-form-field>
+      <br>
+      <mat-form-field>
+        <mat-label>Enter your email</mat-label>
+        <input matInput placeholder="Example: pat@example.com" formControlName="email" required />
+        @if (myForm.invalid && myForm.touched) {
+        @if(myForm.controls['email'].errors?.['email'] | json){
+        <mat-error>
+          Invalid email!</mat-error>
+        }@else {
+        <mat-error>Email required!</mat-error>
+        }
+        }
+      </mat-form-field>
+      <button mat-raised-button>Submit</button>
+    </form>
+  </div>
+</div>

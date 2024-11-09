@@ -1,1 +1,36 @@
-/* You can add global styles to this file, and also import other style files */
+@use '@angular/material' as mat;
+@use './app/styles/libraryTheme.scss' as library;
+
+// $supres: mat.$theme-ignore-duplication-warnings;
+// $supres: true;
+
+body {
+  margin: 0;
+  padding: 30px;
+  height: 100%;
+  font-family: 'Poppins', '', sans-serif;
+  background-image: linear-gradient(to right, #F4EFE1, #F9F7F0 , #fff );
+  color: #282115;
+  @include mat.all-component-themes(library.$light-theme);
+
+}
+
+body.dark-theme {
+  @include mat.all-component-colors(library.$dark-theme);
+  background-image: linear-gradient(to right, #0D0B07, #1B160E , #282115 );
+  color: #F4EFE1;
+}
+
+html {
+  height: 100%;
+}
+main{
+  height: 100%;
+  margin-top: 3rem;
+}
+
+@include mat.core();
+@include mat.color-variants-backwards-compatibility(library.$light-theme);
+
+
+

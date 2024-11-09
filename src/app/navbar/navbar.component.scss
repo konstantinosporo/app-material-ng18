@@ -1,0 +1,51 @@
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+
+  mat-toolbar-row {
+    padding: 0 20px;
+    display: flex;
+    align-items: center;
+
+    .title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .spacer {
+      flex: 1 1 auto;
+    }
+
+    .menu-toggle {
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 15px;
+      font-size: 1rem;
+    }
+    
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar {
+    mat-toolbar-row {
+      .menu-toggle {
+        display: block;
+      }
+
+      .nav-links {
+      display: none;
+    }
+    }
+  }
+}

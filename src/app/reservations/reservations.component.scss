@@ -1,0 +1,16 @@
+@use '@angular/material' as mat;
+
+$theme: mat.define-theme();
+
+.edit {
+  @include mat.button-color($theme, $color-variant: secondary);
+}
+.delete {
+  @include mat.button-color($theme, $color-variant: error);
+}
+.active{
+  @include mat.chips-color($theme, $color-variant: secondary);
+}
+.inactive{
+  @include mat.chips-color($theme, $color-variant: error);
+}

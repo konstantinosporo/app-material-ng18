@@ -1,0 +1,21 @@
+<mat-grid-list cols="7" [rowHeight]="isSmallScreen?'100px': '110px'">
+  @for (tile of tiles; track tile) {
+  <mat-grid-tile [colspan]="isSmallScreen ? 7 : tile.cols"
+    [rowspan]="(tile.text === 'SideNav' && isSmallScreen) ? 1 : tile.rows" [style.background]="tile.color">
+    <ng-container [ngSwitch]="tile.text">
+      @if(!isSmallScreen){
+      <app-sidenav *ngSwitchCase="'SideNav'" [links]="links"></app-sidenav>
+      }@else{
+      <ng-container *ngSwitchCase="'SideNav'">
+        <app-sidenav-phone [links]="links"></app-sidenav-phone>
+      </ng-container>
+      }
+      <app-title *ngSwitchCase="'Title'" [title]="'Custom Title'"
+        [content]="'Custom content can be obtional if binding gets removed'"
+        [subtitle]="'Subtitle for the title component, again this is optional'"></app-title>
+
+      <app-content *ngSwitchCase="'Content'" [content]="'My content to display'"></app-content>
+    </ng-container>
+  </mat-grid-tile>
+  }
+</mat-grid-list>

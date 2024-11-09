@@ -1,0 +1,29 @@
+<div class="carousel-container">
+  <!-- carousel -->
+  <div class="carousel">
+    @for(slide of slides;track slide;let idx=$index){
+    <ng-container>
+      @if(idx ===currentSlide){
+      <img [src]="isThemeDark? slide.srcDark: slide.srcLight" class="slide" alt="Slides" @carouselAnimation />
+      <div class="carousel-content" @carouselAnimation>
+        <mat-card style="background:rgba(0,0,0,.1);padding: 1rem;">
+          <mat-card-title>{{slide.label}}</mat-card-title>
+          <mat-card-content><small>{{slide.content}}</small></mat-card-content>
+          <mat-card-footer>
+            <button mat-raised-button [innerText]="slide.buttonText" style="margin-top: 1rem;"></button>
+          </mat-card-footer>
+        </mat-card>
+      </div>
+      }
+    </ng-container>
+    }
+
+    <!-- controls -->
+    <button class="control prev" (click)="onPreviousClick()">
+      <mat-icon>chevron_left</mat-icon>
+    </button>
+    <button class="control next" (click)="onNextClick()">
+      <mat-icon>chevron_right</mat-icon>
+    </button>
+  </div>
+</div>

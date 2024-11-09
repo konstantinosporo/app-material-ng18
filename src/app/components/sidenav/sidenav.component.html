@@ -1,0 +1,16 @@
+<mat-sidenav-container>
+  <!-- Main content area -->
+  <mat-sidenav-content>
+    <header>
+      <h1>Main Content Area</h1>
+    </header>
+    @for(link of links;track link.title){
+      <a [href]="link.href" mat-button class="content">
+        <mat-icon>{{link.icon}}</mat-icon>
+        {{link.title}}
+      </a>
+      <mat-divider/>
+    }
+
+  </mat-sidenav-content>
+</mat-sidenav-container>

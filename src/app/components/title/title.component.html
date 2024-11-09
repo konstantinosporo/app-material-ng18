@@ -1,0 +1,11 @@
+<mat-card>
+  <mat-card-title>{{title}}</mat-card-title>
+  <ng-container *ngIf="content">
+    <mat-card-content>{{content}}</mat-card-content>
+  </ng-container>
+
+  <ng-container *ngIf="subtitle">
+    <mat-card-subtitle><small>{{subtitle}}</small></mat-card-subtitle>
+  </ng-container>
+  
+</mat-card>

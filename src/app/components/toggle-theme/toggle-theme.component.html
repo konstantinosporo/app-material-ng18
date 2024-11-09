@@ -1,0 +1,11 @@
+<div matRipple [matRippleUnbounded]="true" [matRippleRadius]="100"
+  [matRippleColor]="(theme === 'dark-theme') ? 'rgba(40, 33, 21, 0.2)' : 'rgba(199, 187, 156, 0.2)'" 
+  class="toggle-theme">
+  <button mat-icon-button aria-label="Example icon button with a vertical three dot icon" (click)="toggleTheme()">
+    @if(!(theme==='dark-theme')){
+    <mat-icon>light_mode</mat-icon>
+    }@else{
+    <mat-icon>dark_mode</mat-icon>
+    }
+  </button>
+</div>
